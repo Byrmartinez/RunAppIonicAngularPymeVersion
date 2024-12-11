@@ -1,0 +1,99 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>WALLET</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="toggleMenu()"><ion-icon name="menu" class="burger"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <!-- Total de envíos -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Total de envíos realizados</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-text>{{ enviospyme.length }}</ion-text>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Envíos por estado -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Envíos por estado</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-icon slot="start" name="hourglass" color="warning"></ion-icon>
+        <ion-label>Pendientes:</ion-label>
+        <ion-text>{{ totalPendientes }}</ion-text>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="checkmark-circle" color="success"></ion-icon>
+        <ion-label>Aceptados:</ion-label>
+        <ion-text>{{ totalAceptados }}</ion-text>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="locate" color="primary"></ion-icon>
+        <ion-label>En Camino:</ion-label>
+        <ion-text>{{ totalEnCamino }}</ion-text>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="thumbs-up" color="secondary"></ion-icon>
+        <ion-label>Entregados:</ion-label>
+        <ion-text>{{ totalEntregados }}</ion-text>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="close-circle" color="danger"></ion-icon>
+        <ion-label>Cancelados:</ion-label>
+        <ion-text>{{ totalCancelados }}</ion-text>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Total en dinero -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Total de pedidos en $</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-icon slot="start" name="cash" color="primary"></ion-icon>
+        <ion-label>Total pagado por pedidos:</ion-label>
+        <ion-text>${{ totalPedidosEnDinero }}</ion-text>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
+
+<!-- Menú desplegable -->
+<ion-list *ngIf="mostrarMenu" class="menu-list">
+  <ion-item (click)="navigate('perfil')">Perfil</ion-item>
+  <ion-item (click)="navigate('contacto')">Contacto</ion-item>
+  <ion-item (click)="navigate('faq')">Preguntas Frecuentes</ion-item>
+  <ion-item (click)="logout()">Cerrar Sesión</ion-item>
+</ion-list>
+
+<!-- Menú de navegación inferior -->
+<ion-footer>
+  <ion-toolbar>
+    <ion-segment>
+      <ion-segment-button value="home" (click)="navigate('home-emp')">
+        <ion-icon name="home"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="wallet" (click)="navigate('wallet-emp')">
+        <ion-icon name="wallet"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="indicadores" (click)="navigate('indicadores')">
+        <ion-icon name="analytics"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="mi-cuenta" (click)="navigate('myacc')">
+        <ion-icon name="person"></ion-icon>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-footer>

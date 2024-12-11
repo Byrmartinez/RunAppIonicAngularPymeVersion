@@ -1,0 +1,50 @@
+ion-card {
+  margin: 15px 0;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #ffffff, #e6e6e6); /* Fondo degradado */
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+
+  ion-button {
+    --background: #8c52ff;
+    --color: rgb(255, 255, 255);
+  }
+
+  ion-card-header {
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+    background-color: #8c52ff; 
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+
+  ion-card-content {
+    padding: 10px;
+
+    ion-item {
+      --background: transparent;
+      padding: 10px 0;
+      font-size: 1em;
+      color: #555;
+    }
+
+    ion-text {
+      font-weight: bold;
+      font-size: 1.1em;
+      color: #000000; /* Verde para valores positivos */
+    }
+  }
+}
+
+/* Barra inferior con fondo morado claro */
+ion-footer {
+  ion-toolbar {
+      --background: #8c52ff;
+      /* Mantén el morado claro */
+  }
+
+  ion-segment-button {
+      --color: white;
+      --indicator-color: black;
+      /* Indicador oscuro para los botones */
+  }
+}

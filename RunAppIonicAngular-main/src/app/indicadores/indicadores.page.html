@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>INDICADORES</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="toggleMenu()"><ion-icon name="menu" class="burger"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <!-- Contenedor de gráficos -->
+  <div class="chart-container">
+    <canvas id="estadoChart"></canvas>
+  </div>
+
+  <div class="chart-container">
+    <canvas id="tipoEnvioChart"></canvas>
+  </div>
+
+  <div class="chart-container">
+    <canvas id="distanciaChart"></canvas>
+  </div>
+
+  <div class="chart-container">
+    <canvas id="comisionChart"></canvas>
+  </div>
+
+  <!-- Menú desplegable -->
+  <ion-list *ngIf="mostrarMenu" class="menu-list">
+    <ion-item (click)="navigate('perfil')">Perfil</ion-item>
+    <ion-item (click)="navigate('contacto')">Contacto</ion-item>
+    <ion-item (click)="navigate('faq')">Preguntas Frecuentes</ion-item>
+    <ion-item (click)="logout()">Cerrar Sesión</ion-item>
+  </ion-list>
+</ion-content>
+
+<!-- Menú de navegación inferior -->
+<ion-footer>
+  <ion-toolbar>
+    <ion-segment>
+      <ion-segment-button value="home" (click)="navigate('home-emp')">
+        <ion-icon name="home"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="wallet" (click)="navigate('wallet-emp')">
+        <ion-icon name="wallet"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="indicadores" (click)="navigate('indicadores')">
+        <ion-icon name="analytics"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="mi-cuenta" (click)="navigate('myacc')">
+        <ion-icon name="person"></ion-icon>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-footer>

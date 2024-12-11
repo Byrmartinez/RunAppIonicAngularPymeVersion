@@ -1,0 +1,92 @@
+ion-header {
+  --background: white;
+}
+
+ion-button {
+  --background: #8c52ff; /* Color del botón "Menú" */
+  --color: rgb(255, 255, 255);
+}
+
+ion-content {
+  ion-img {
+    display: block;
+    margin: 20px auto;
+    width: 150px;
+    height: auto;
+  }
+
+  ion-button {
+    margin-top: 20px;
+    --background: #8c52ff; /* Color del botón "Crear Envío" */
+    --color: white;
+  }
+
+  
+
+  .pedido-lista {
+    margin-top: 20px;
+
+    ion-card {
+      background-color: #ffffff;
+      border: 1px solid #e0e0e0;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+      ion-card-header {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .direccion {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+
+          .icono {
+            font-size: 20px;
+            color: #8c52ff;
+          }
+
+          .etiqueta {
+            font-weight: bold;
+            color: #8c52ff;
+          }
+
+          ion-card-title {
+            font-size: 16px;
+            color: #333;
+            margin: 0;
+          }
+        }
+      }
+
+      ion-card-content {
+        p {
+          color: #888;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+/* Menú desplegable */
+.menu-list {
+  ion-item {
+    --background: white;
+    --color: black;
+  }
+}
+
+/* Barra inferior con fondo morado claro */
+ion-footer {
+  ion-toolbar {
+      --background: #8c52ff;
+      /* Mantén el morado claro */
+  }
+
+  ion-segment-button {
+      --color: white;
+      --indicator-color: black;
+      /* Indicador oscuro para los botones */
+  }
+}

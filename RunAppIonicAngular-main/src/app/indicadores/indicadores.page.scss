@@ -1,0 +1,31 @@
+
+  .chart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+/* Barra inferior con fondo morado claro */
+ion-footer {
+    ion-toolbar {
+        --background: #8c52ff;
+        /* Mantén el morado claro */
+    }
+  
+    ion-segment-button {
+        --color: white;
+        --indicator-color: black;
+        /* Indicador oscuro para los botones */
+    }
+  }
+/* Menú desplegable */
+.menu-list {
+  ion-item {
+    --background: white;
+    --color: black;
+  }
+}
